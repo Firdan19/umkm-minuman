@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <title>weblabs.id • UMKM Minuman</title>
+    <meta name="description" content="weblabs.id menyediakan kopi, teh, matcha, dan minuman segar dengan bahan premium. Pesan cepat via WhatsApp." />
+    <link rel="canonical" href="https://weblabs.id/" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://weblabs.id/" />
+    <meta property="og:title" content="weblabs.id • UMKM Minuman" />
+    <meta property="og:description" content="Kopi, teh, matcha, dan minuman segar dengan bahan premium. Pesan cepat via WhatsApp." />
+    <meta property="og:image" content="https://weblabs.id/og-cover.jpg" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="weblabs.id • UMKM Minuman" />
+    <meta name="twitter:description" content="Kopi, teh, matcha, dan minuman segar dengan bahan premium. Pesan cepat via WhatsApp." />
+    <meta name="twitter:image" content="https://weblabs.id/og-cover.jpg" />
+
+    <!-- Favicon (ubah logo di folder public) -->
+    <!-- favicon utama -->
+    <link rel="icon" type="logo.png" sizes="32x32" href="/logo.png" />
+    <link rel="icon" type="logo.png" sizes="16x16" href="/logo.png" />
+    <!-- untuk iOS/Android homescreen -->
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "weblabs.id • UMKM Minuman",
+      "url": "https://weblabs.id/",
+      "image": "https://weblabs.id/og-cover.jpg",
+      "priceRange": "Rp",
+      "servesCuisine": ["Coffee","Tea","Beverages"],
+      "telephone": "+62-812-0000-0000",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. Contoh No. 123",
+        "addressLocality": "Kota",
+        "addressRegion": "ID",
+        "postalCode": "12345",
+        "addressCountry": "ID"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "10:00",
+        "closes": "22:00"
+      }],
+      "sameAs": [
+        "https://www.instagram.com/weblabs.id",
+        "https://www.tiktok.com/@weblabs.id"
+      ],
+      "potentialAction": {
+        "@type": "OrderAction",
+        "target": "https://wa.me/6281916580900?text=Halo%20saya%20mau%20pesan"
+      }
+    }
+    </script>
+
+    <!-- Dark mode toggle -->
+    <script>
+      (() => {
+        const saved = localStorage.getItem("theme");
+        const preferDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && preferDark)) document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100; }
+}
+
+/* ===== Components minimal ===== */
+@layer components {
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold text-white bg-slate-900 dark:bg-white dark:text-slate-900 transition-all duration-300 ease-[cubic-bezier(.22,1,.36,1)] hover:-translate-y-[1px] active:translate-y-0; }
+  .btn-ghost { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 font-semibold text-slate-900 dark:text-slate-100 bg-white/70 dark:bg-white/5 backdrop-blur ring-1 ring-black/5 dark:ring-white/5; }
+  .chip { @apply relative px-4 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-300; }
+
+  .surface { @apply rounded-2xl bg-white/80 dark:bg-white/[0.04] backdrop-blur; }
+  .surface-quiet { @apply rounded-2xl bg-white/60 dark:bg-white/[0.03] backdrop-blur; }
+}
+
+/* ===== Utilities ===== */
+@layer utilities {
+  /* LIGHT: cerah & bergairah */
+  .sunrise {
+    background:
+      radial-gradient(40rem 24rem at 15% 10%, rgba(255, 233, 186, .45), transparent 60%),
+      radial-gradient(36rem 28rem at 85% 0%, rgba(255, 186, 220, .35), transparent 55%),
+      radial-gradient(28rem 24rem at 80% 80%, rgba(255, 204, 149, .30), transparent 60%),
+      linear-gradient(180deg, #fff 0%, #fff 40%, #fff8f2 100%);
+  }
+  /* DARK: tetap jelas (tanpa “burem” total) */
+  .sunrise-dark {
+    background:
+      radial-gradient(34rem 22rem at 12% 12%, rgba(61, 85, 138, .25), transparent 60%),
+      radial-gradient(30rem 26rem at 88% 0%, rgba(121, 80, 160, .20), transparent 55%),
+      radial-gradient(24rem 22rem at 80% 78%, rgba(74, 111, 165, .18), transparent 60%),
+      linear-gradient(180deg, #0b1220 0%, #0b1220 45%, #0f1628 100%);
+  }
+
+  /* Safe area di bawah header (h-14) + notch */
+  .safe-top { padding-top: calc(env(safe-area-inset-top, 0px) + 56px); }
+
+  /* Judul fluid */
+  .title-fluid { font-size: clamp(28px, 6vw, 52px); line-height: 1.06; letter-spacing: -0.02em; }
+
+  .divide-hairline { @apply divide-y divide-black/5 dark:divide-white/5; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .tabular { font-variant-numeric: tabular-nums; }
+
+  .animate-marquee { animation: marquee 20s linear infinite; }
+}
+
+@keyframes marquee { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
